@@ -5,4 +5,4 @@ export const createUser = (name: string) => {
         balance: 80,
         stocks: []
     }
-}
+}w

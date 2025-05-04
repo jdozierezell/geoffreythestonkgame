@@ -1,16 +1,36 @@
 ---
+import { db, User, Stock } from 'astro:db'
 
+import { buyStock } from '../utilities/stock/buy'
+
+const users = await db.select().from(User)
+console.log(users)
+
+const stocks = await db.select().from(Stock)
+console.log(stocks)
+
+buyStock(stocks[0], 1, users[0])
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/favicon.svg"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width"
+        />
+        <meta
+            name="generator"
+            content={Astro.generator}
+        />
+        <title>Astro</title>
+    </head>
+    <body>
+        <h1>Astro</h1>
+    </body>
 </html>
