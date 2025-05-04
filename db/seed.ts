@@ -4,15 +4,15 @@ export default async function() {
   await db.insert(User).values([
     {id: "001",
 		name: "John Doe",
-		balance: 80,
+		balance: 800,
 		stocks: []},
     {id: "002",
 		name: "Jane Doe",
-		balance: 80,
+		balance: 800,
 		stocks: []},
     {id: "003",
 		name: "Jim Doe",
-		balance: 80,
+		balance: 800,
 		stocks: []}
   ]);
 

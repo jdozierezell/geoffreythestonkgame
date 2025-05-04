@@ -1,13 +1,15 @@
 ---
-import { db, User, Stock } from 'astro:db'
-
 import { buyStock } from '../utilities/stock/buy'
+import { db, eq, Stock } from 'astro:db'
+import type { Stock as StockType } from 'astro:db'
 
-const users = await db.select().from(User)
-console.log(users)
-
-const stocks = await db.select().from(Stock)
-console.log(stocks)
+await buyStock('AAPL', 1, '001')
+const stock = await db
+    .select()
+    .from(Stock)
+    .where(eq(Stock.ticker, 'AAPL'))
+    .get()
+console.log(stock)
 ---
 
 <html lang="en">
