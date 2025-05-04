@@ -2,15 +2,15 @@ import { db, User, Stock } from 'astro:db';
 
 export default async function() {
   await db.insert(User).values([
-    {id: 1,
+    {id: "001",
 		name: "John Doe",
 		balance: 80,
 		stocks: []},
-    {id: 2,
+    {id: "002",
 		name: "Jane Doe",
 		balance: 80,
 		stocks: []},
-    {id: 3,
+    {id: "003",
 		name: "Jim Doe",
 		balance: 80,
 		stocks: []}
